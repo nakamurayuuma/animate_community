@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="row-box">
+    <div class="title">
+      ログイン
+    </div>
+  </div>
+  <%= form_for(:session, url: login_path) do |f| %>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :email,"メールアドレス" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :password,"パスワード" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.password_field :password, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+   <div class="form-submit">
+    <%= f.submit "ログイン", class: "submit-btn-log" %>
+  </div>
+  <% end %>
+  <div class="form-log-text">
+    新規の方はユーザー登録してください。
+    <div class="form-log-text-link">
+      <%= link_to "ユーザー登録", signup_path, class: "home-link-btn" %>
+    </div>
+  </div>
+</div>

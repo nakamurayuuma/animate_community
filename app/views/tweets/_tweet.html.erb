@@ -1,0 +1,24 @@
+<li id="tweet-<%= tweet.id %>">
+  <div class="user-tweet-top">
+    <div class="gravator"><%= link_to gravatar_for(tweet.user, size: 50), tweet.user %></div>
+    <div class="user"><%= link_to tweet.user.name, tweet.user, class:"user-name" %></div>
+  </div>
+  <div class="content">
+    <div class="tweet-text">
+      <%= tweet.content %>
+    </div>
+    <div class="tweet-image">
+      <%= image_tag tweet.image.url if tweet.image? %>
+    </div>
+  </div>
+  <div class="timestamp">
+    <div class="tweet-time">
+      <%= time_ago_in_words(tweet.created_at) %>前
+      <% if current_user?(tweet.user) %>
+        <%= link_to "削除", tweet, method: :delete,
+                                        data: { confirm: "この投稿を削除してもいいですか？" },
+                                        class:"tweet-delete" %>
+      <% end %>
+    </div>
+  </div>
+</li>

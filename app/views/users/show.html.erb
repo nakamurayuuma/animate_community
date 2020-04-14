@@ -1,0 +1,286 @@
+<% provide(:title, @user.name) %>
+<div class="user-show">
+  <div class="user-top">
+    <div class="user-prof">
+      <div class="user-prof-top">
+        <div class="user_image">
+          <%= gravatar_for @user %>
+        </div>
+        <div class="user-name">
+          <%= @user.name %>
+        </div>
+      </div>
+        <div class="user-stats">
+          <%= render 'shared/stats' %>
+      </div>
+    </div>
+    <div class="user-profile">
+      <div class="user-profile-title">
+      「プロフィール」
+      </div> 
+      <div class="user-gender">
+        <div class="user-gender-title">
+          性別：
+        </div> 
+        <div class="user-gender-content">
+          <%= @user.gender.gender %>
+        </div>
+      </div>
+      <div class="user-blood">
+        <div class="user-blood-title">
+          血液型：
+        </div> 
+        <div class="user-blood-content">
+          <%= @user.blood.blood %>
+        </div>
+      </div>
+      <div class="user-birthday">
+        <div class="user-birthday-title">
+          生年月日：
+        </div> 
+        <div class="user-year-content">
+          <%= @user.year.year %>
+        </div>
+        <div class="user-year-text">
+          年
+        </div>
+        <div class="user-month">
+          <%= @user.month.month %>
+        </div>
+        <div class="user-month-text">
+          月
+        </div>
+        <div class="user-day">
+          <%= @user.day.day %>
+        </div>
+        <div class="user-month-text">
+          日
+        </div>
+      </div>
+      <div class="user-prefecture">
+        <div class="user-prefecture-title">
+          都道府県：
+        </div> 
+        <div class="user-prefecture-content">
+          <%= @user.prefecture.name %>
+        </div>
+      </div>
+      <div class="user-favorite_anime">
+        <div class="user-favorite_anime-title">
+          好きなアニメ：
+        </div>
+        <div class="user-favorite_anime-content">
+          <%= @user.favorite_anime %>
+        </div>
+      </div>
+      <div class="user-favorite_genre">
+        <div class="user-favorite_genre-title">
+          好きなジャンル：
+        </div>
+        <div class="user-favorite_genre-content">
+          <%= @user.favorite_genre %>
+        </div>
+      </div>
+      <div class="user-favorite_voice_actor">
+        <div class="user-favorite_voice_actor-title">
+          好きな声優：
+        </div>
+        <div class="user-favorite_voice_actor-content">
+          <%= @user.favorite_voice_actor %>
+        </div>
+      </div>
+      <div class="user-about_me">
+        <div class="user-about_me-title">
+          自己紹介文：
+        </div>
+        <div class="user-about_me-content">
+          <%= @user.about_me %>
+        </div>
+      </div>
+      <% count = 0 %>
+      <% @registers.each do |register| %>
+        <% if count < 1 %>
+          <% if logged_in? && current_user.id == register.user_id %>
+            <% count += 1 %>
+            <div class="user-edit">
+              <div class="user-edit-box">
+                <div class="user-edit-box-text">
+                  <%= link_to "編集する", edit_user_path(current_user),class:"user-edit-text" %>
+                </div>
+              </div>
+            </div>
+            <div class="user-logout">
+              <div class="user-logout-box">
+                <div class="user-logout-box-text">
+                  <%= link_to "ログアウト", logout_path,class:"user-logout-text", method: :delete %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        <% else %>
+          <% break %>
+        <% end %>
+      <% end %>
+      <div class="user-tweet">
+        <%= render 'follow_form' if logged_in? %>
+        <% if @user.tweets.any? %>
+          「ツイート (<%= @user.tweets.count %>)」
+          <ol class="tweets">
+            <%= render @tweets %>
+          </ol>
+          <%= will_paginate @tweets %>
+        <% end %>
+      </div>
+      <% count = 0 %>
+      <% @registers.each do |register| %>
+        <% if count < 1 %>
+          <% if logged_in? && current_user.id == register.user_id %>
+            <% count += 1 %>
+            <div class="tweet_form">
+              <%= render 'shared/tweet_form' %>
+            </div>
+          <% end %>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class="user-anime">
+    <div class="rigth-content">
+      <div class="view-top"> 
+        <div class="view-top-title">
+          閲覧済みのアニメ一覧 
+        </div>
+        <% @registers.each do |register| %>
+          <% if logged_in? && current_user.id == register.user_id %>
+            <% if @registers.empty? %>
+              <div class="anime-empty-text">
+                <%= link_to "アニメの登録をしてください", new_-register_path, class:"anime-empty-link" %>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+        <div class="view-top-content">
+          <% @registers.each do |register| %>
+            <div class="view-top-content-box">
+              <% if register.management_id == 1 %>
+                <div class="view-top-content-head">
+                  <div class="view-top-content-name">
+                    「タイトル：
+                    <%= register.title %>」
+                  </div>
+                  <div class="view-top-content-btn">
+                    <div class="view-top-content-edit">
+                      <%= link_to "編集", edit_register_path(register.id),class:"register-edit-text" %>
+                    </div>
+                    <div class="view-top-content-destroy">
+                      <%= link_to "削除", register, method: :delete,
+                                          data: { confirm: "このアニメを削除してもいいですか？" },
+                                          class:"register-destroy-text" %>
+                    </div>
+                  </div>
+                </div>
+                <%= image_tag register.image.url if register.image? %>
+                <div class="view-top-content-period">
+                  アニメシーズン：
+                  <%= register.period %>
+                </div>
+                <div class="view-top-content-category">
+                  カテゴリー：
+                  <%= register.category.name %>
+                </div>
+                <div class="view-top-content-text">
+                  テキスト：
+                  <%= register.content %>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="view-center"> 
+        <div class="view-center-title"> 
+          閲覧中のアニメ一覧
+        </div>
+        <div class="view-center-content">
+          <% @registers.each do |register| %>
+            <div class="view-center-content-box">
+            <% if register.management_id == 2 %>
+              <div class="view-center-content-head">
+                <div class="view-center-content-name">
+                  タイトル：
+                  <%= register.title %>
+                </div>
+                <div class="view-center-content-btn">
+                  <div class="view-center-content-edit">
+                    <%= link_to "編集", edit_register_path(register.id),class:"register-edit-text" %>
+                  </div>
+                  <div class="view-center-content-destroy">
+                    <%= link_to "削除", register, method: :delete,
+                                        data: { confirm: "このアニメを削除してもいいですか？" },
+                                        class:"register-destroy-text" %>
+                  </div>
+                </div>
+              </div>
+              <%= image_tag register.image.url if register.image? %>
+              <div class="view-center-content-period">
+                アニメシーズン：
+                <%= register.period %>
+              </div>
+              <div class="view-center-content-category">
+                カテゴリー：
+                <%= register.category.name %>
+              </div>
+              <div class="view-center-content-text">
+                テキスト：
+                <%= register.content %>
+              </div>
+            <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <div class="view-bottom">
+        <div class="view-bottom-title">  
+          まだみていないアニメ一覧
+        </div>
+        <div class="view-bottom-content">
+          <% @registers.each do |register| %>
+            <div class="view-bottom-content-box">
+              <% if register.management_id == 3 %>
+                <div class="view-bottom-content-head">
+                  <div class="view-bottom-content-name">
+                    タイトル：
+                    <%= register.title %>
+                  </div>
+                  <div class="view-bottom-content-btn">
+                    <div class="view-bottom-content-edit">
+                      <%= link_to "編集", edit_register_path(register.id),class:"register-edit-text" %>
+                    </div>
+                    <div class="view-bottom-content-destroy">
+                      <%= link_to "削除", register, method: :delete,
+                                          data: { confirm: "このアニメを削除してもいいですか？" },
+                                          class:"register-destroy-text" %>
+                    </div>
+                  </div>
+                </div>
+                <%= image_tag register.image.url if register.image? %>
+                <div class="view-bottom-content-period">
+                  アニメシーズン：
+                  <%= register.period %>
+                </div>
+                <div class="view-bottom-content-category">
+                  カテゴリー：
+                  <%= register.category.name %>
+                </div>
+                <div class="view-bottom-content-text">
+                  テキスト：
+                  <%= register.content %>
+                </div>
+              <% end %>
+              </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

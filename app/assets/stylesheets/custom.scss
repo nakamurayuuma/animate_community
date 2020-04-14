@@ -1,0 +1,689 @@
+@import "reset";
+
+/* universal */
+
+li{
+  list-style: none;
+}
+
+/* header */
+
+.header{
+  height: 60px;
+  width: 100%;
+  background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+  display: flex;
+  justify-content: space-between;
+  .container{
+    margin-top: 13px;
+    #logo{
+      text-decoration: none;
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+      padding-left: 40px;
+    }
+  }
+  .navbar{
+    display: flex;
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 40px;
+    .navbar-nav{
+      text-decoration: none;
+      margin-bottom: 20px;
+      color: white;
+      margin-left: 25px;
+    }
+  }
+}
+
+/* body */
+
+.top{
+  width: 100%;
+  text-align: center;
+  .top-image{
+    margin-top: 30px;
+    .top-image-file{
+      height: 400px;
+      width: 600px;
+    }
+  }
+  .center{
+    font-size: 30px;
+    margin-top: 50px;
+    color: #FF8C00;
+    background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .home-link{
+    width: 100%;
+    margin: 40px 0;
+    .home-link-box{
+      width: 400px;
+      height: 40px;
+      margin: auto;
+      .home-link-btn{
+        text-decoration: none;
+        color: #FF00FF;
+        font-size: 20px;
+        border-bottom: 1px solid #FF00FF;
+      }
+    }
+  }
+}
+
+
+
+/* footer */
+
+.footer{
+  height: 20px;
+  width: 100%;
+  border-top: 1px solid gray;
+  background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+  padding: 10px 0;              
+  .footer-content{
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(-225deg, #2CD8D5 0%, #C5C1FF 56%, #FFBAC3 100%);
+    .footer-site-title{
+      font-size: 14px;
+      margin-left: 40px;
+      color: gray;
+    }
+    .footer-nav{
+      text-decoration: none;
+      font-size: 14px;
+      color: gray;
+      margin-right: 50px;
+    }
+  }
+}
+
+/* user-show */
+
+.user-show{
+  display: flex;
+  .user-top{
+    margin-top: 20px;
+    margin-left: 30px;
+    .user-prof{
+      height: 180px;
+      width: 320px;
+      margin:  auto;
+      padding-left: 30px;
+      padding-right: 30px;
+      .user-prof-top{
+        display: flex;
+        margin-bottom: 20px;
+        .gravatar{
+          margin-right: 50px;
+          padding-top: 30px;
+        }
+        .user-name{
+          margin-top: 60px;
+        }
+      }
+    }
+    .user-profile{
+      width: 320px;
+      margin:  auto;
+      padding-left: 30px;
+      padding-right: 30px;
+      padding-top: 20px;
+      margin-bottom: 10px;
+      .user-profile-title{
+        margin-bottom: 20px;
+      }
+      .user-gender{
+        display: flex;
+        .user-gender-title{
+          margin-right: 10px;
+        }
+      }
+      .user-blood{
+        padding-top: 8px;
+        display: flex;
+        .user-blood-title{
+          margin-right: 10px;
+        }
+      }
+      .user-birthday{
+        padding-top: 8px;
+        display: flex;
+        .user-birthday-title{
+          margin-right: 10px;
+        }
+      }
+      .user-prefecture{
+        padding-top: 8px;
+        display: flex;
+        .user-prefecture-title{
+          margin-right: 10px;
+        }
+      }
+      .user-favorite_anime{
+        padding-top: 8px;
+        display: flex;
+        .user-favorite_anime-title{
+          margin-right: 10px;
+        }
+      }
+      .user-favorite_genre{
+        padding-top: 8px;
+        display: flex;
+        .user-favorite_genre-title{
+          margin-right: 10px;
+        }
+      }
+      .user-favorite_voice_actor{
+        padding-top: 8px;
+        display: flex;
+        .user-favorite_voice_actor-title{
+          margin-right: 10px;
+        }
+      }
+      .user-about_me{
+        padding-top: 8px;
+        .user-about_me-title{
+          margin-right: 10px;
+        }
+        .user-about_me-content{
+          width: 310px;
+          padding-top: 8px;
+          margin-bottom: 10px;
+        }
+      }
+      .user-edit{
+        padding-top: 8px;
+        .user-edit-box{
+          height: 50px;
+          width: 300px;
+          background-color: #FF9900;
+          text-align: center;
+          .user-edit-box-text{
+            padding-top: 12px;
+            .user-edit-text{
+              color: white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      .user-logout{
+        padding-top: 15px;
+        margin-bottom: 60px;
+        .user-logout-box{
+          height: 50px;
+          width: 300px;
+          background-color: red;
+          text-align: center;
+          .user-logout-box-text{
+            padding-top: 12px;
+            .user-logout-text{
+              color: white;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .user-anime{
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    .rigth-content{
+      width: 980px;
+      .view-top{
+        .view-top-title{
+          font-size: 24px;
+          margin-top: 20px;
+          margin-left: 350px;
+        }
+        .view-top-content{
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: 60px;
+          .view-top-content-box{
+            margin-top: 40px;
+            .view-top-content-head{
+              display: flex;
+              justify-content: space-between;
+              .view-top-content-name{
+                font-size: 16px;
+                margin-left: 5px;
+                margin-bottom: 10px;
+              }
+              .view-top-content-btn{
+                display: flex;
+                .view-top-content-edit{
+                  height: 20px;
+                  width: 40px;
+                  background-color: #FF9900;
+                  border-radius: 3px;
+                  text-align: center;
+                  margin-top: 1px;
+                  padding-bottom: 5px;
+                  margin-right: 10px;
+                  .register-edit-text{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 14px;
+                  }
+                }
+                .view-top-content-destroy{
+                  height: 20px;
+                  width: 40px;
+                  background-color: red;
+                  border-radius: 3px;
+                  text-align: center;
+                  margin-top: 1px;
+                  padding-bottom: 5px;
+                  margin-right: 40px;
+                  .register-destroy-text{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+            img{
+              height: 300px;
+              width: 400px;
+              margin-right: 40px;
+              margin-bottom: 10px;
+            }
+            .view-top-content-text{
+              width: 400px;
+            }
+          }
+        }
+      }
+      .view-center{
+        .view-center-title{
+          font-size: 24px;
+          margin-top: 100px;
+          margin-left: 350px;
+        }
+        .view-center-content{
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: 60px;
+          .view-center-content-box{
+            .view-center-content-head{
+              margin-top: 40px;
+              display: flex;
+              justify-content: space-between;
+              .view-center-content-name{
+                font-size: 16px;
+                margin-left: 5px;
+                margin-bottom: 10px;
+              }
+              .view-center-content-btn{
+                display: flex;
+                .view-center-content-edit{
+                  height: 20px;
+                  width: 40px;
+                  background-color: #FF9900;
+                  border-radius: 3px;
+                  text-align: center;
+                  margin-top: 1px;
+                  padding-bottom: 5px;
+                  margin-right: 10px;
+                  .register-edit-text{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 14px;
+                  }
+                }
+                .view-center-content-destroy{
+                  height: 20px;
+                  width: 40px;
+                  background-color: red;
+                  border-radius: 3px;
+                  text-align: center;
+                  margin-top: 1px;
+                  padding-bottom: 5px;
+                  margin-right: 40px;
+                  .register-destroy-text{
+                    text-decoration: none;
+                    color: white;
+                    font-size: 14px;
+                  }
+                }
+              }
+            }
+            img{
+              height: 300px;
+              width: 400px;
+              margin-right: 40px;
+              margin-bottom: 10px;
+            }
+            .view-center-content-text{
+              width: 400px;
+            }
+          }
+        }
+      }
+      .view-bottom{
+        margin-bottom: 50px;
+        .view-bottom-title{
+          font-size: 24px;
+          margin-top: 100px;
+          margin-left: 350px;
+          margin-bottom: 40px;
+        }
+        .view-bottom-content{
+          display: flex;
+          flex-wrap: wrap;
+          margin-left: 60px;
+          .view-bottom-content-box{
+            .view-bottom-content-head{
+              display: flex;
+              justify-content: space-between;
+              .view-bottom-content-name{
+                font-size: 16px;
+                margin-left: 5px;
+                margin-bottom: 10px;
+              }
+                .view-bottom-content-btn{
+                  display: flex;
+                  .view-bottom-content-edit{
+                    height: 20px;
+                    width: 40px;
+                    background-color: #FF9900;
+                    border-radius: 3px;
+                    text-align: center;
+                    margin-top: 1px;
+                    padding-bottom: 5px;
+                    margin-right: 10px;
+                    .register-edit-text{
+                      text-decoration: none;
+                      color: white;
+                      font-size: 14px;
+                    }
+                  }
+                  .view-bottom-content-destroy{
+                    height: 20px;
+                    width: 40px;
+                    background-color: red;
+                    border-radius: 3px;
+                    text-align: center;
+                    margin-top: 1px;
+                    padding-bottom: 5px;
+                    margin-right: 40px;
+                    .register-destroy-text{
+                      text-decoration: none;
+                      color: white;
+                      font-size: 14px;
+                    }
+                  }
+                }
+              }
+            img{
+              height: 300px;
+              width: 400px;
+              margin-right: 40px;
+              margin-bottom: 10px;
+            }
+            .view-bottom-content-text{
+              width: 400px;
+            }
+          }
+        }
+      }
+      .anime-empty-text{
+        .anime-empty-link{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+/* news */
+
+.news {
+  .news-description{
+    margin: 20px 0  20px  40px;
+  }
+  ul {
+    li {
+      list-style: none;
+        .border-width-bold-half {
+          border-width: 1.5px;
+        }
+        .border-color {
+          border-color: silvar;
+        }
+        .news-content {
+          margin: 50px 0 0 40px;
+          &__title {
+            font-weight: bold;
+            font-size: 16px;
+          }
+          &__image{
+            margin-top: 20px;
+          }
+          &__text{
+            margin-top: 20px;
+          }
+          &__link{
+            padding: 30px 0 70px 0;
+            .news-link{
+              text-decoration: none;
+              color: blue;
+              border-bottom: 1px solid blue;
+            }
+          }
+        }
+    }
+
+  }
+}
+
+/* tweets */
+
+.user-tweet-top{
+  display:  flex;
+  margin-top: 20px;
+  .user{
+    margin-top: 15px;
+    .user-name{
+      color: black;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+  }
+}
+.tweet-text{
+  width: 300px;
+  margin-top: 10px;
+}
+.tweet-image{
+  margin-top: 10px;
+}
+.tweet-time{
+  margin-top: 10px;
+  .tweet-delete{
+    text-decoration: none;
+    color: red;
+  }
+}
+
+.field{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  .field-box{
+    height: 150px;
+    width: 300px;
+  }
+  .submit-btn-tweet{
+    height: 50px;
+    width: 300px; 
+    background-color: #3333FF	;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  .image{
+    margin-top: 10px;
+  }
+}
+
+/* follow */
+
+.stats{
+  display: flex;
+  .stats-following{
+    margin-left: 10px;
+    a{
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  .stats-followers{
+    margin-left: 15px;
+    a{
+      text-decoration: none;
+      color: blue;
+    }
+  }
+  .stat{
+    text-decoration: none;
+  }
+}
+
+/* form */
+
+.row{
+  width: 100%;
+  .row-box{
+    width: 1000px;
+    margin: auto;
+    text-align: center;
+    .title{
+      font-size: 30px;
+      margin: 50px 0;
+    }
+  }
+  .form-label{
+    width: 1000px;
+    margin: auto;
+    .form-label-box{
+      margin: 20px 0;
+      .form-label-text{
+        margin-left: 348px;
+      }
+      .form-label-field{
+        margin-top: 10px;
+        text-align: center;
+        .form-control{
+          border: 1px solid silver;
+          height: 40px;
+          width: 300px;
+        }
+        select{
+          height: 40px;
+          width: 300px;
+          background-color: white;
+        }
+      }
+      .form-label-image{
+        margin-top: 20px;
+        margin-left: 345px;
+      }
+      .form-label-field-birthday{
+        margin-top: 10px;
+        text-align: center;
+        select{
+          height: 40px;
+          width: 97px;
+          background-color: white;
+        }
+      }
+      .form-label-field-me{
+        margin-top: 10px;
+        text-align: center;
+        .form-control{
+          height: 100px;
+          width: 300px;
+          background-color: white;
+        }
+      }
+    }
+  }
+  .form-submit{
+    width: 300px;
+    margin: 40px auto;
+    .submit-btn{
+      height: 50px;
+      width: 300px; 
+      background-color:#FFBBFF;
+      color: white;
+      cursor: pointer;
+    }
+    .submit-btn-log{
+      height: 50px;
+      width: 300px; 
+      background-color: #5D99FF;
+      color: white;
+      cursor: pointer;
+    }
+    .submit-edit{
+      height: 50px;
+      width: 300px; 
+      background-color: #FF9900;
+      color: white;
+      cursor: pointer;
+    }
+    .submit-btn-del{
+      height: 50px;
+      width: 300px; 
+      background-color: red;
+      color: white;
+      cursor: pointer;
+    }
+  }
+  .form-log-text{
+    width: 300px;
+    margin: 60px auto 20px auto;
+    text-align: center;
+    .form-log-text-link{
+      margin-top: 10px;
+      .home-link-btn{
+        text-decoration: none;
+        color: #2C7CFF;
+        border-bottom: 1px solid #2C7CFF;
+        font-size: 20px;
+      }
+    }
+  }
+  .gravatar_edit{
+    margin-left: 568px;
+    a{
+      text-decoration: none;
+      color: #2C7CFF;
+      border-bottom: 1px solid #2C7CFF;
+      margin-left: 10px;
+    }
+  }
+}
+
+/* error */
+
+.alert{
+  text-align: center;
+  color: red;
+}
+.error-message{
+  text-align: center;
+  color: red;
+  padding-bottom: 20px;
+}

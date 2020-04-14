@@ -1,0 +1,64 @@
+<div class="news">
+  <div class="news-description">
+  アニメの動画サイトをまとめています。
+  <br>みたいアニメがあるかどうか調べてみてください。
+  </div>
+  <ul>
+    <li>
+        <hr class="border-width-bold-half border-color" />
+          <div class="news-content">
+            <div class="news-content__title">
+            「まずはyoutubeで検索してみよう！（youtube)」
+            </div>
+            <div class="news-content__image">
+              <%= image_tag("youtube.png", alt: "youtube", width: "700", height: "350") %>
+            </div>
+            <div class="news-content__text">
+              「無料アニメ全話」で検索すると無料で見られるアニメが見られます。
+              <br>ただしアニメ動画はすぐに削除される可能性が高いです。
+              <br>youtubeで見たいアニメがなければ他の動画サイトで検索してみましょう。
+            </div>
+            <div class="news-content__link">
+              <%= link_to "youtubeのページはこちらをクリックしてください","https://www.youtube.com/",class:"news-link" %>
+            </div>
+          </div>
+      </li>
+    <li>
+      <hr class="border-width-bold-half border-color" />
+        <div class="news-content">
+          <div class="news-content__title">
+          「アニメと一緒にドラマや映画もみるならhulu」
+          </div>
+          <div class="news-content__image">
+            <%= image_tag("hulu.png", alt: "hulu", width: "700", height: "350") %>
+          </div>
+          <div class="news-content__text">
+            huluなら定額でアニメが見放題になります。
+            <br>アニメだけじゃなくドラマや映画もみる方はhuluがおすすめです。
+          </div>
+          <div class="news-content__link">
+            <%= link_to "huluのページはこちらをクリックしてください","https://www.hulu.jp/static/?cmp=10014&waad=og41Dzk6&utm_source=yahoo&utm_medium=cpc&utm_content=80494114467&utm_campaign=1450688785&yclid=YSS.1001008483.EAIaIQobChMIi-Lau5zh6AIVkKmWCh2EIQvYEAAYASAAEgKGvfD_BwE",class:"news-link" %>
+          </div>
+        </div>
+    </li>
+      <li>
+        <hr class="border-width-bold-half border-color" />
+          <div class="news-content">
+            <div class="news-content__title">
+            「アニメをより多くみたいならU-NEXT）」
+            </div>
+            <div class="news-content__image">
+              <%= image_tag("u-next.png", alt: "U-NEXT", width: "700", height: "350") %>
+            </div>
+            <div class="news-content__text">
+              アニメの多さで選ぶならU-NEXT!
+              <br>huluと同様、定額でアニメが見放題になります。
+              <br>アニメをより多くみたいならhuluよりもこちらがおすすめです。
+            </div>
+            <div class="news-content__link">
+              <%= link_to "U-NEXTのページはこちらをクリックしてください","https://video.unext.jp/?_ga=2.190042283.1851764678.1586637571-801168156.1586637571", class:"news-link"%>
+            </div>
+          </div>
+      </li>
+  </ul>
+</div> 

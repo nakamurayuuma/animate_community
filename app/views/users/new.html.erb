@@ -1,0 +1,148 @@
+<div class="row">
+  <div class="row-box">
+    <div class="title">
+      ユーザー登録
+    </div>
+  </div>
+  <%= form_for(@user, url: signup_path) do |f| %>
+    <%= render 'shared/error_messages',object: f.object %>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :name,"ニックネーム(必須）" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.text_field :name, placeholder: "例）中村 悠真",class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :email,"メールアドレス(必須）" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.email_field :email,placeholder: "例）email@aaa.com", class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :password,"パスワード（必須）" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.password_field :password, placeholder: "例）yuma1234",class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :password_confirmation, "パスワード（確認用）" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.password_field :password_confirmation, placeholder: "例）yuma1234",class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :gender_id,"性別"  %>
+      </div>
+      <div class="form-label-field">
+        <%= f.collection_select :gender_id, Gender.all, :id, :gender %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :blood_id,"血液型"  %>
+      </div>
+      <div class="form-label-field">
+        <%= f.collection_select :blood_id, Blood.all, :id, :blood %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :"生年月日" %>
+      </div>
+      <div class="form-label-field-birthday">
+        <%= f.collection_select :year_id, Year.all, :id, :year %>
+        <%= f.collection_select :month_id, Month.all, :id, :month %>
+        <%= f.collection_select :day_id, Day.all, :id, :day %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :prefecture_id,"都道府県" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.collection_select :prefecture_id, Prefecture.all, :id, :name %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :favorite_anime,"好きなアニメ" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.text_field :favorite_anime,placeholder: "例）鬼滅の刃", class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :favorite_genre,"好きなジャンル" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.text_field :favorite_genre,placeholder: "例）バトル、ファンタジー", class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :favorite_voice_actor,"好きな声優" %>
+      </div>
+      <div class="form-label-field">
+        <%= f.text_field :favorite_voice_actor, placeholder: "例）梶 裕貴",class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-label">
+    <div class="form-label-box">
+      <div class="form-label-text">
+        <%= f.label :about_me,"自己紹介" %>
+      </div>
+      <div class="form-label-field-me">
+        <%= f.text_area :about_me, size: "20x10", placeholder: "自己紹介文を自由に書いてみましょう。",class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+
+    <div class="form-submit">
+      <%= f.submit "新規登録する", class: "submit-btn" %>
+    </div>
+  <% end %>
+</div>

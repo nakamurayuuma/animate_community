@@ -1,0 +1,16 @@
+<div class="header">
+  <div class="container">
+    <%= link_to "ANIMATE COMUNITY", root_path, id: "logo" %>
+  </div>
+  <ul class="navbar">
+    <li><%= link_to "アニメを探す",  search_path, class: "navbar-nav" %></li>
+    <li><%= link_to "アニメを登録", new_register_path , class: "navbar-nav"%></li>
+    <li><%= link_to "新着情報", news_path , class: "navbar-nav"%></li>
+    <% if logged_in? %>
+      <li><%= link_to "ユーザー", users_path , class: "navbar-nav"%></li>
+      <li><%= link_to "マイページ", user_path(current_user), class: "navbar-nav" %></li>
+    <% else %>
+      <li><%= link_to "ログイン", login_path, class: "navbar-nav" %></li>
+    <% end %>
+  </ul>
+</div>
